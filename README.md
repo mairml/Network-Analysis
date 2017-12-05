@@ -18,7 +18,8 @@ degree-distribution.py:
 2) Creates a file giving the degree distribution data -- perfect for power curve analysis in gnuplot
 
 
-=====USE OF THESE SCRIPTS====
+=====IMPLEMENTATION====
+
 For use of these scripts, edit the given program files below the point that says:
 #=====MAKE EDITS HERE=========#
 
