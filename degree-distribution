@@ -1,0 +1,52 @@
+#Count degree frequencies in the network to generate degree distribution file
+#NOTE: Need full list of nodes as well as input network file for use of this script
+from collections import Counter
+import itertools
+
+def freqcount(file1,nodelist, out):
+
+    GeneList = open(nodelist, 'r')
+    file1 = open(file1, 'r')
+#Create list of nodes
+    geneList = []
+    for line in GeneList:
+        line = line.strip()
+        geneList.append(line)
+    IDsList = []
+    for line in file1:
+        line = line.strip()
+        lineList = line.split("\t")
+        IDsList.append(lineList[0])
+        IDsList.append(lineList[1])
+
+# Count each time node appears
+    dict = {}
+    for item in IDsList:
+        count = 0
+        if item in GeneList:
+            dict[item] = count+1
+
+    counts = Counter(IDsList)
+
+
+    for key, value in counts.items():
+        value = str(value)
+
+
+    counter = [(k, len(list(v))) for k, v in itertools.groupby(sorted(counts.values()))]
+    outfile2 = open(out, 'w')
+    counter = str(counter)
+    values = counter.replace("),", "\n")
+    values = values.replace(",", "\t")
+    values = values.replace("[", "")
+    values = values.replace("(", "")
+    values = values.replace(" ", "")
+    values = values.replace(")", "")
+    values = values.replace("]", "")
+    outfile2.write(values+"\t1")
+
+
+#=====MAKE EDITS HERE=========#
+freqcount("input.csv","list_of_nodes.txt","output.tsv")
+
+
