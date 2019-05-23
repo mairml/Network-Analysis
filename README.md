@@ -1,5 +1,5 @@
 # Network-Analysis
-Create gene co-expression network files from Ingenuity array data, compare different networks for shared and differential nodes/edges, and generate degree distribution output.
+Create network files from matrices, create matrices from network files, compare different networks for shared and differential node and edge representation, generate degree distribution output for a network, and calculate hub influence measures
 
 ======COMPONENTS=====
 
@@ -20,7 +20,6 @@ degree-distribution.py:
 
 =====IMPLEMENTATION====
 
+Further, specific directions are given in the script files. 
 For use of these scripts, edit the given program files below the point that says:
 #=====MAKE EDITS HERE=========#
-
-Further, specific directions are given in the files
